@@ -1,0 +1,73 @@
+
+> web-poc-instana@0.1.0 start /root/poc-reactjs
+> react-scripts start
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://10.240.64.4/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /root/poc-reactjs/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Compiled successfully!
+
+You can now view web-poc-instana in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.240.64.4:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+ForbiddenError: Forbidden
+    at /root/poc-reactjs/node_modules/serve-index/index.js:125:19
+    at /root/poc-reactjs/node_modules/webpack-dev-server/lib/Server.js:430:49
+    at Layer.handle [as handle_request] (/root/poc-reactjs/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/root/poc-reactjs/node_modules/express/lib/router/index.js:317:13)
+    at /root/poc-reactjs/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/root/poc-reactjs/node_modules/express/lib/router/index.js:335:12)
+    at next (/root/poc-reactjs/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/root/poc-reactjs/node_modules/serve-static/index.js:121:7)
+    at SendStream.emit (events.js:314:20)
+    at SendStream.error (/root/poc-reactjs/node_modules/send/index.js:270:17)
+URIError: Failed to decode param '/theme/META-INF/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/passwd'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/root/poc-reactjs/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/root/poc-reactjs/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/root/poc-reactjs/node_modules/express/lib/router/index.js:574:18)
+    at next (/root/poc-reactjs/node_modules/express/lib/router/index.js:220:15)
+    at expressInit (/root/poc-reactjs/node_modules/express/lib/middleware/init.js:40:5)
+    at Layer.handle [as handle_request] (/root/poc-reactjs/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/root/poc-reactjs/node_modules/express/lib/router/index.js:317:13)
+    at /root/poc-reactjs/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/root/poc-reactjs/node_modules/express/lib/router/index.js:335:12)
+URIError: Failed to decode param '/%c0'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/root/poc-reactjs/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/root/poc-reactjs/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/root/poc-reactjs/node_modules/express/lib/router/index.js:574:18)
+    at next (/root/poc-reactjs/node_modules/express/lib/router/index.js:220:15)
+    at expressInit (/root/poc-reactjs/node_modules/express/lib/middleware/init.js:40:5)
+    at Layer.handle [as handle_request] (/root/poc-reactjs/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/root/poc-reactjs/node_modules/express/lib/router/index.js:317:13)
+    at /root/poc-reactjs/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/root/poc-reactjs/node_modules/express/lib/router/index.js:335:12)
+
+> web-poc-instana@0.1.0 start /root/poc-reactjs
+> react-scripts start
+
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://10.240.64.4/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /root/poc-reactjs/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Compiled successfully!
+
+You can now view web-poc-instana in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.240.64.4:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
