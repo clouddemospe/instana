@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactdemo
+spec:
+  ports:
+  - port: 3000
+  selector:
+    app: reactdemo
+  clusterIP: None
+---
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: reactdemo
+spec:
+  selector:
+    matchLabels:
+      app: reactdemo
+  template:
+    metadata:
+      labels:
+        app: reactdemo
+        runtime: react
+    spec:
+      containers:
+      - image: clouddemospe/react-demo:v1.11.4
+        name: react
+        ports:
+        - containerPort: 3000
+          name: react

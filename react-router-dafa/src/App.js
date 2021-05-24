@@ -1,27 +1,10 @@
-//import React, {useState, useEffect} from 'react'
-import {Router, Switch, Route} from "react-router-dom";
-import { createBrowserHistory } from "history";
-import React from "react";
+import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import S3 from './components/ServiciosAWS/S3';
-import Dynamo from './components/ServiciosAWS/Dynamo';
-import RDS from './components/ServiciosAWS/RDS'
-import SQS from './components/ServiciosAWS/SQS'
-import SNS from './components/ServiciosAWS/SNS'
+import SOAP from './components/ServiciosAWS/SOAP';
 import './App.css';
-
-const customHistory = createBrowserHistory();
-
-customHistory.listen(location => {
-  console.log('Set page to', location.pathname);
-
-  // eslint-disable-next-line no-undef
-  ineum('page', location.pathname);
-  
-  // Note that the above can result in many useless pages when you are making use of path parameters.
-  // In these cases you will have to define the page via different means, e.g. by creating a custom
-  // Route component which accepts a 'pageName' property.
-});
+import useToken from './useToken';
 
 // Capturing pages in Instana API
 const GetLocationRoute = ({ component: ComponentToRender, ...rest }) => {
@@ -36,23 +19,25 @@ const GetLocationRoute = ({ component: ComponentToRender, ...rest }) => {
   )
 };
 
-export default function App() {
+function App() {
+  const { token, setToken } = useToken();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
-    <Router history={customHistory}>
-      <div className="App">
-        <Navbar></Navbar>
-        <div className="AppBody">
-          <Switch>
-            <GetLocationRoute path="/s3" component={S3} />
-            <GetLocationRoute path="/dynamo" component={Dynamo} />
-            <GetLocationRoute path="/rds" component={RDS} />
-            <GetLocationRoute path="/sqs"component={SQS} />
-            <GetLocationRoute path="/sns" component={SNS} />
-            <GetLocationRoute path="/" component={Home} />
-          </Switch>
-        </div>
+    <div className="App">
+      <Navbar></Navbar>
+      <div className="AppBody">
+      <BrowserRouter>
+        <Switch>
+          <GetLocationRoute path="/SOAP" component={SOAP} />
+          <GetLocationRoute path="/" component={Home} />
+        </Switch>
+      </BrowserRouter>
       </div>
-    </Router>
+    </div>
   );
 }
 
@@ -65,3 +50,4 @@ function Home() {
     </div>)
 }
 
+export default App;

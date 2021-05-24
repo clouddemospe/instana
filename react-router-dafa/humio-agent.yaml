@@ -1,0 +1,9 @@
+humio-fluentbit:  
+  enabled: true  
+  humioHostname: http://humio.clouddemos.pe 
+  es:    
+    tls: true
+  securityContext:
+    privileged: false
+  scc:
+    enable: true
